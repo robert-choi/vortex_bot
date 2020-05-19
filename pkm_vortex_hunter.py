@@ -2,14 +2,17 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from requests import exceptions
 from time import sleep
-from hunting_info import username, password, search_map
+from hunting_info import username, password, search_map, variants
 from map_data import map_data
 
 
 class VortexBot():
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.search_list = map_data[f'legend_{search_map}'] + map_data[f'ultra_{search_map}'] + ['Shiny']
+        self.search_list = map_data[f'legend_{search_map}'] + map_data[f'ultra_{search_map}']
+        for ptype in variants:
+            if variants[ptype]:
+                self.search_list.append(ptype)
         self.searching = True
         self.moving_left = True
 

@@ -4,10 +4,14 @@ password = ''
 
 # Search parameters
 search_map = 26
-Legendary = True
-UltraBeast = True
-Shiny = True
-Dark = False
-Mystic = False
-Metallic = False
-Shadow = False
+rarity = {
+    'Legendary': True,
+    'UltraBeast': True
+}
+variants = {
+    'Shiny': True,
+    'Dark': False,
+    'Mystic': False,
+    'Metallic': False,
+    'Shadow': False
+}
